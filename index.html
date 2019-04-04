@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Machine Learning</title>
+    <link href='css/style.css' rel='stylesheet'>
+    <script src="./js/prefixfree.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="wrap">
+            <div class="cube">
+                <div class="front" style="padding:0;margin:0">
+                    <img src="./img/4.png" width="220" height="220" style="padding:0;margin:0">
+                </div>
+                <div class="back" style="padding:0;margin:0">
+                    <img src="./img/uic2.png" width="220" height="220" style="padding:0;margin:0">
+                </div>
+                <div class="top" style="padding:0;margin:0">
+                    <img src="./img/4.png" width="220" height="220" style="padding:0;margin:0">
+                </div>
+                <div class="bottom" style="padding:0;margin:0">
+                    <img src="./img/uic2.png" width="220" height="220" style="padding:0;margin:0">
+                </div>
+                <div class="left" style="padding:0;margin:0">
+                    <img src="./img/ml.png" width="220" height="220" style="padding:0;margin:0">
+                </div>
+                <div class="right" style="padding:0;margin:0">
+                    <img src="./img/5.png" width="220" height="220" style="padding:0;margin:0">
+                </div>
+            </div>
+        </div>
+
+        <div id="clockdiv" style="font-size:5em; text-align:center;z-index:999;padding-top:250px"></div>
+        <audio id="myAudio">
+            <source src="Kalimba.mp3" type="audio/mp3">
+        </audio>
+        <div id="logo">
+            <img src="./img/5.png" width="80" height="80">
+            <h5>copyright&copy; UIC Developers</h5>
+        </div>
+    </div>
+    <script src="./js/particles.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/index.js"></script>
+
+    <script src="./js/socket.io.js"></script>
+    <script src="./js/jquery.min.js"></script>
+
+    <script>
+        var socket_io = io('http://localhost:3000');
+        socket_io.on('connect', function (socket) {
+            console.log('connected to server');
+        });
+
+        socket_io.on('start-red', function (msg) {
+            console.log('started');
+            startGame();
+        });
+    </script>
+</body>
+
+</html>

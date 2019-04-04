@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Start the Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+</head>
+
+<body>
+    <button id="start-btn" class="btn">start</button>
+	<br>
+	<h2 id='text' class="text-div error">Not Connected to server</h2>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/socket.io.slim.js"></script>
+
+    <script>
+        var socket = io();
+		socket.on('connect',(socket)=>{
+			document.getElementById('text').setAttribute('class','text-div success');
+			document.getElementById('text').innerHTML = 'Connected to server';
+		});
+        $('#start-btn').click(function () {
+            socket.emit('start-red', {
+                msg: "start"
+            });
+			document.getElementById('text').setAttribute('class','text-div active');
+			document.getElementById('text').innerHTML = 'Timer started';
+        });
+    </script>
+</body>
+
+</html>
