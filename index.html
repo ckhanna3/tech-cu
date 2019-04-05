@@ -32,7 +32,7 @@
                     <img src="./img/5.png" width="220" height="220" style="padding:0;margin:0">
                 </div>
             </div>
-            <div id="clockdiv" style="font-size:5em; text-align:center;z-index:999;padding-top:250px;color:#fff000"></div>
+            <div id="clockdiv" style="font-size:5em; text-align:center;z-index:999;padding-top:250px;color:#f00bbff"></div>
         </div>
 
         
@@ -41,7 +41,7 @@
         </audio>
         <div id="logo">
             <img src="./img/5.png" width="80" height="80">
-            <h5>copyright&copy; UIC Developers</h5>
+            <h5 style="color:#00bbff">copyright&copy; UIC Developers</h5>
         </div>
     </div>
     <script src="./js/particles.min.js"></script>
@@ -52,15 +52,15 @@
     <script src="./js/jquery.min.js"></script>
 
     <script>
-        var socket_io = io('http://localhost:3000');
-        socket_io.on('connect', function (socket) {
-            console.log('connected to server');
-        });
+        //var socket_io = io('http://localhost:3000');
+        //socket_io.on('connect', function (socket) {
+        //    console.log('connected to server');
+        //});
 
-        socket_io.on('start-red', function (msg) {
-            console.log('started');
-            startGame();
-        });
+        //socket_io.on('start-red', function (msg) {
+        //    console.log('started');
+        //    startGame();
+        //});
     </script>
 </body>
 
